@@ -3159,6 +3159,197 @@
             border-color: #4facfe;
             background: #e8f4fd;
         }
+        
+        /* =================================== */
+        /*          RESPONSIVE STYLES          */
+        /* =================================== */
+
+        /* For tablets and smaller devices */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 0;
+            }
+
+            .header {
+                padding: 20px;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            /* VA Plot responsiveness */
+            .va-plot {
+                width: 100%;
+                max-width: 450px; /* Prevent it from getting too big on tablets */
+                height: auto;
+                aspect-ratio: 1 / 1;
+            }
+
+            .quadrant-title {
+                font-size: 1em;
+            }
+            
+            .quadrant-examples {
+                font-size: 0.8em;
+            }
+            
+            /* Grid responsiveness */
+            .metaphor-grid,
+            .emoji-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .emoji-item {
+                font-size: 40px;
+                padding: 10px;
+            }
+            
+            /* Rating rows */
+            .rating-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .rating-stars {
+                flex-wrap: wrap; 
+                justify-content: center;
+                width: 100%;
+            }
+
+            /* Feelings Wheel */
+            .core-emotions-grid {
+                grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+                gap: 10px;
+            }
+
+            .secondary-emotions-grid {
+                gap: 8px;
+            }
+            
+            .secondary-emotion {
+                padding: 8px 16px;
+            }
+
+            /* Final feedback radio buttons */
+            .radio-group .radio-item {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+
+        /* For mobile phones */
+        @media (max-width: 480px) {
+            body {
+                padding: 0;
+            }
+
+            .container {
+                border-radius: 0;
+                min-height: 100vh;
+                box-shadow: none;
+            }
+
+            .content {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 1.5em;
+            }
+            .header p {
+                font-size: 0.9em;
+            }
+
+            .scenario-box {
+                padding: 15px;
+            }
+            
+            /* Consent screen adjustments */
+            .consent-screen, .feedback-screen, .interface-container {
+                padding: 15px;
+            }
+            .consent-section {
+                padding: 15px 10px;
+            }
+            
+            /* VA Plot fonts */
+            .quadrant-title {
+                font-size: 0.9em;
+            }
+            .quadrant-examples {
+                font-size: 0.75em;
+                line-height: 1.2;
+            }
+
+            /* Sliders */
+            .slider-labels {
+                font-size: 12px;
+            }
+            .slider-labels span:nth-child(2) {
+                display: none; /* Hide the middle label on very small screens to prevent crowding */
+            }
+
+            /* Contextual Factors Grid */
+            .context-grid {
+                grid-template-columns: repeat(2, 1fr); /* Force 2 columns on small mobile */
+                gap: 10px;
+            }
+            .context-item {
+                padding: 10px;
+            }
+            .context-icon {
+                font-size: 28px;
+            }
+            
+            /* Buttons */
+            .btn {
+                padding: 14px 20px;
+                font-size: 16px;
+                width: 100%; /* Make main navigation buttons full-width */
+                margin: 8px 0;
+                box-sizing: border-box;
+            }
+            
+            /* Stack back/next buttons */
+            #backBtn, #nextBtn {
+                display: block; 
+            }
+            #backBtn + #nextBtn {
+                margin-top: 0;
+            }
+            
+            /* Make text inputs and selects more mobile friendly */
+            .input-group input, .input-group textarea, .input-group select {
+                padding: 14px;
+                font-size: 16px; /* Prevents iOS auto-zoom on focus */
+            }
+
+            /* Ensure emoji label is readable */
+            .emoji-label {
+                font-size: 12px;
+            }
+            
+            /* Demographics form */
+            .input-group label {
+                font-size: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -3167,34 +3358,6 @@
             <h1>Emotion Annotation Interface Study</h1>
             <p>Help us understand which interface works best for daily emotion logging</p>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3208,34 +3371,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             <!-- Consent Screen (Now First) -->
             <div id="consentScreen">
                 <div class="consent-screen">
@@ -3245,34 +3380,6 @@
                             Before we begin, please read the following information about this study
                         </p>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3292,34 +3399,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     <div class="consent-section">
                         <h3>🎯 What is this study about?</h3>
                         <p>We are researching different ways people can log their emotions digitally. Your feedback will help us design better emotion tracking tools for apps and digital wellness platforms.</p>
@@ -3328,66 +3407,10 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     <div class="consent-section">
                         <h3>⏱️ How long will this take?</h3>
                         <p>Approximately <strong>15-20 minutes</strong> of your time.</p>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3405,68 +3428,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     <div class="consent-section">
                         <h3>🚪 Your Rights</h3>
                         <p><strong>Voluntary Participation:</strong> You can stop participating at any time without any consequences.</p>
                         <p><strong>No Right or Wrong Answers:</strong> We want your honest experience and opinions.</p>
                         <p><strong>Questions:</strong> You can contact our research team if you have any concerns.</p>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3494,67 +3461,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     <div style="text-align: center; margin-top: 30px;">
                         <button class="btn btn-primary" onclick="proceedToDemographics()">I Agree - Continue</button>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3571,34 +3482,6 @@
                     <label>Your Name (optional):</label>
                     <input type="text" id="userName" placeholder="Enter your name (optional)">
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3710,34 +3593,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             <!-- Main Interface Container -->
             <div id="mainInterface" class="hidden">
                 <!-- Scenario Display -->
@@ -3753,64 +3608,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <!-- Interface Name -->
                 <h2 id="interfaceName" style="text-align: center; margin-bottom: 20px;"></h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3819,34 +3618,6 @@
                 <div class="interface-container" id="interfaceContainer">
                     <!-- Content will be dynamically loaded -->
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3903,68 +3674,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <!-- Navigation Buttons -->
                 <div style="text-align: center; margin-top: 30px;">
                     <button class="btn btn-secondary" id="backBtn" onclick="previousStep()" style="display: none;">Back</button>
                     <button class="btn btn-primary" id="nextBtn" onclick="nextStep()">Continue</button>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3982,67 +3697,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     <div class="interface-comparison">
                         <h3>📊 Interface Comparison</h3>
                         <p>You tested these 10 emotion annotation interfaces:</p>
                         <div id="interfaceList"></div>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -4058,34 +3717,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     <div class="interface-comparison">
                         <h3>💭 Why This Interface?</h3>
                         <div class="input-group">
@@ -4093,34 +3724,6 @@
                             <textarea id="bestInterfaceReason" placeholder="What made this interface stand out? Consider ease of use, accuracy, speed, intuitiveness, etc."></textarea>
                         </div>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -4136,34 +3739,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     <div class="interface-comparison">
                         <h3>💭 Why Avoid This Interface?</h3>
                         <div class="input-group">
@@ -4175,34 +3750,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     <div class="interface-comparison">
                         <h3>🚀 Future Improvements</h3>
                         <div class="input-group">
@@ -4210,34 +3757,6 @@
                             <textarea id="generalImprovements" placeholder="Any suggestions for new features, combinations of interfaces, or completely different approaches?"></textarea>
                         </div>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -4276,34 +3795,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     <div class="interface-comparison">
                         <h3>📝 Additional Comments</h3>
                         <div class="input-group">
@@ -4315,68 +3806,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     <div style="text-align: center; margin-top: 30px;">
                         <button class="btn btn-secondary" onclick="goBackToMainInterface()">Back to Interfaces</button>
                         <button class="btn btn-primary" onclick="submitFinalFeedback()">Complete Study</button>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
